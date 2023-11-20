@@ -8,7 +8,7 @@ while True:
     frame1 = cv2.GaussianBlur(frame, (3, 3), 0)
     frame1 = cv2.Canny(frame, 100, 200)
     cv2.imshow('edge', frame1)
-    cv2.imshow('frame', frame)
+    # cv2.imshow('frame', frame)
     if cv2.waitKey(1) == ord('q'):
         break
 
