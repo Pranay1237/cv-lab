@@ -1,6 +1,6 @@
 import cv2
 
-img1 = cv2.imread('img1.jpg', cv2.IMREAD_GRAYSCALE)
+img1 = cv2.imread('img2.jpg', cv2.IMREAD_GRAYSCALE)
 img2 = cv2.imread('img2.jpg')
 
 cv2.imshow('img1', img1)

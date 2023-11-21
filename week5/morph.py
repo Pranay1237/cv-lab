@@ -1,4 +1,6 @@
-import cv2, numpy as np, matplotlib.pyplot as plt
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
 
 img = cv2.imread('img1.jpg', cv2.IMREAD_GRAYSCALE)
 

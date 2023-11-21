@@ -1,7 +1,7 @@
 import cv2
 
 # Path to the input video file
-input_file = 'vid2.mp4'
+input_file = 'vid1.mp4'
 
 # Create a VideoCapture object to read the input video
 cap = cv2.VideoCapture(input_file)
