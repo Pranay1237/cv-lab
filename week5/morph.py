@@ -26,6 +26,5 @@ for i in range(6):
     plt.yticks([])
 
 plt.show()
-
 cv2.waitKey(0)
 cv2.destroyAllWindows()
