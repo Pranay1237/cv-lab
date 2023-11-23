@@ -1,40 +1,34 @@
 import cv2
 import numpy as np
+import matplotlib.pyplot as plt
 
-# Load the image
-image = cv2.imread('path_to_image.jpg')
+image = cv2.imread('img2.jpg')
 
-# Get the image dimensions
 height, width = image.shape[:2]
 
-# Define the rotation angle in degrees
 angle = 45
 
-# Define the scaling factors
 scale_x = 1.5
 scale_y = 1.5
 
-# Define the translation values
 tx = 50
 ty = 50
 
-# Compute the rotation matrix
 rotation_matrix = cv2.getRotationMatrix2D((width/2, height/2), angle, 1)
-
-# Perform rotation transformation
 rotated_image = cv2.warpAffine(image, rotation_matrix, (width, height))
-
-# Perform scaling transformation
 scaled_image = cv2.resize(image, None, fx=scale_x, fy=scale_y)
 
-# Perform translation transformation
 translation_matrix = np.float32([[1, 0, tx], [0, 1, ty]])
 translated_image = cv2.warpAffine(image, translation_matrix, (width, height))
 
-# Display the original and transformed images
-cv2.imshow('Original Image', image)
-cv2.imshow('Rotated Image', rotated_image)
-cv2.imshow('Scaled Image', scaled_image)
-cv2.imshow('Translated Image', translated_image)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+images = [image, rotated_image, scaled_image, translated_image]
+titles = ['Original Image', 'Rotated Image', 'Scaled Image', 'Translated Image']
+
+for i in range(4):
+    plt.subplot(2, 2, i+1)
+    plt.imshow(images[i])
+    plt.title(titles[i])
+    plt.xticks([])
+    plt.yticks([])
+
+plt.show()
