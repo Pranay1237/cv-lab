@@ -7,6 +7,7 @@ equalized_image = cv2.equalizeHist(image)
 
 images = [image, equalized_image]
 titles = ['Original Image', 'Equalized Image']
+# 4 images original image, equalized image, equalized histogram, CLAHE
 
 for i in range(2):
     plt.subplot(1, 2, i+1)

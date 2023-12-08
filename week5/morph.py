@@ -14,12 +14,14 @@ dialate = cv2.dilate(img1, kernel, iterations=2)
 erode = cv2.erode(img1, kernel, iterations=2)
 opening = cv2.morphologyEx(img1, cv2.MORPH_OPEN, kernel)
 closing = cv2.morphologyEx(img1, cv2.MORPH_CLOSE, kernel)
+mg = cv2.morphologyEx(img1, cv2.MORPH_GRADIENT, kernel)
+th = cv2.morphologyEx(img1, cv2.MORPH_TOPHAT, kernel)
 
-titles = ['original', 'binary', 'dialate', 'erode', 'opening', 'closing']
-images = [img, img1, dialate, erode, opening, closing]
+titles = ['original', 'binary', 'dialate', 'erode', 'opening', 'closing', 'gradient', 'tophat']
+images = [img, img1, dialate, erode, opening, closing, mg, th]
 
-for i in range(6):
-    plt.subplot(2, 3, i+1)
+for i in range(8):
+    plt.subplot(2, 4, i+1)
     plt.imshow(images[i], 'gray')
     plt.title(titles[i])
     plt.xticks([])

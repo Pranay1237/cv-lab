@@ -11,12 +11,13 @@ bilat=cv2.bilateralFilter(img,7,30,30)
 gblur=cv2.GaussianBlur(img, (5 , 5), 0)
 dst=cv2.filter2D(img,-1,kernel)
 mdblur=cv2.medianBlur(img , 3)
+box=cv2.boxFilter(img, -1, (5,5), normalize=True)
 
-titles=['image', 'blur image', 'bilteral image', '2D Convolution', 'gaussian blur', 'median blur']
-images=[img, blurr, bilat, dst, gblur, mdblur]
+titles=['image', 'blur image', 'bilteral image', '2D Convolution', 'gaussian blur', 'median blur', 'box filter']
+images=[img, blurr, bilat, dst, gblur, mdblur, box]
 
-for i in range(6) :
-     plt.subplot(2,3,i+1), plt.imshow(images[i],'gray')
+for i in range(7) :
+     plt.subplot(2,4,i+1), plt.imshow(images[i],'gray')
      plt.title(titles[i])
      plt.xticks([ ]), plt.yticks([ ])
      
